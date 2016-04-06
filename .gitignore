@@ -8,3 +8,5 @@
 plugins/
 *.user
 bin/
+src/Ionic appOcalypse/www/lib/
+node_modules/
