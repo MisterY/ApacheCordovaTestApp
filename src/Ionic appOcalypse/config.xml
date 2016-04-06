@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget id="com.ionicframework.ionicblankapp" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="1" defaultlocale="en-AU" id="com.ionicframework.ionicblankapp" version="0.1.1" windows-packageVersion="0.1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>ionic-appOcalypse</name>
-  <description>
-        An Ionic Framework and Cordova project.
-    </description>
+  <description>test app using Ionic with Apache Cordova</description>
   <author email="you@example.com" href="http://example.com.com/">Alen Siljak</author>
   <content src="index.html" />
   <access origin="*" />
@@ -25,4 +23,27 @@
   <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
   <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
   <plugin name="ionic-plugin-keyboard" spec="~1.0.8" />
+  <plugin name="cordova-plugin-crosswalk-webview" version="1.6.1" />
+  <plugin name="cordova-plugin-device-orientation" version="1.0.2" />
+  <plugin name="cordova-plugin-file" version="4.1.1" />
+  <plugin name="cordova-plugin-file-transfer" version="1.5.0" />
+  <plugin name="cordova-plugin-file-transfer" version="1.5.0" />
+  <preference name="WindowsStoreDisplayName" value="appOcalypse" />
+  <plugin name="cordova-plugin-globalization" version="1.0.3" />
+  <vs:platformSpecificValues xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
+    <vs:platformSpecificWidget id="io.package.appOcalypse" platformName="windows" version="0.1.0.0" />
+  </vs:platformSpecificValues>
+  <plugin name="cordova-plugin-hockeyapp" version="2.2.1" />
+  <plugin name="cordova-plugin-inappbrowser" version="1.2.1" />
+  <plugin name="cordova-plugin-device-orientation" version="1.0.2" />
+  <preference name="xwalkVersion" value="17+" />
+  <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+  <preference name="xwalkMode" value="embedded" />
+  <preference name="xwalkMultipleApk" value="true" />
+  <plugin name="cordova-plugin-network-information" version="1.2.0" />
+  <plugin name="cordova-plugin-dialogs" version="1.2.0" />
+  <plugin name="cordova-plugin-splashscreen" version="3.2.1" />
+  <plugin name="cordova-plugin-dialogs" version="1.2.0" />
+  <plugin name="cordova-plugin-network-information" version="1.2.0" />
+  <plugin name="cordova-plugin-splashscreen" version="3.2.1" />
 </widget>
