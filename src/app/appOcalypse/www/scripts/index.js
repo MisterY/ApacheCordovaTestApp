@@ -16,6 +16,8 @@
         var element = document.getElementById("deviceready");
         element.innerHTML = 'Device Ready';
         element.className += ' ready';
+
+        document.getElementById("dropbox-link").visible = true;
     };
 
     function onPause() {
