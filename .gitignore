@@ -10,3 +10,6 @@ plugins/
 bin/
 src/Ionic appOcalypse/www/lib/
 node_modules/
+
+# xamarin
+src/ksamarin/obj
