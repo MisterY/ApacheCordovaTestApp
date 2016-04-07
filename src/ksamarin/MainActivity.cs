@@ -26,6 +26,14 @@ namespace ksamarin
 
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
         }
+
+        [Java.Interop.Export("openMyActivity")]
+        public void openMyActivity(View view)
+        {
+            //var activity = new MyActivity();
+            StartActivity(typeof(MyActivity));
+            //intent.
+        }
     }
 }
 
