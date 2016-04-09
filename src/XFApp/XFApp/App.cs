@@ -11,6 +11,17 @@ namespace XFApp
     {
         public App()
         {
+            var button = new Button
+            {
+                Text = "Click to open another page"
+            };
+            button.Clicked += (sender, args) =>
+            {
+                // open the new page
+                var newPage = new FirstPage();
+                App.Current.MainPage = newPage;
+            };
+
             // The root page of your application
             MainPage = new ContentPage
             {
@@ -21,10 +32,12 @@ namespace XFApp
                          new Label {
                              HorizontalTextAlignment = TextAlignment.Center,
                              Text = "Welcome to Xamarin Forms!"
-                         }
+                         },
+                         button
                      }
                 }
             };
+
         }
 
         protected override void OnStart()
