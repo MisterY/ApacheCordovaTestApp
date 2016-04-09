@@ -12,4 +12,13 @@ src/Ionic appOcalypse/www/lib/
 node_modules/
 
 # xamarin
-src/ksamarin/obj
+src/ksamarin/obj/
+src/ksamarin/packages/
+
+src/XFApp/XFApp/obj/
+src/XFApp/XFApp.Droid/obj/
+src/XFApp/XFApp.iOS/obj/
+src/XFApp/XFApp.UWP/obj/
+src/XFApp/XFApp.Windows/obj/
+src/XFApp/XFApp.WinPhone/obj/
+src/wuni/obj/
