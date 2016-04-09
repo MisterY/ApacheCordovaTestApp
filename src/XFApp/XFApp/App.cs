@@ -13,7 +13,9 @@ namespace XFApp
         {
             var button = new Button
             {
-                Text = "Click to open another page"
+                Text = "=> Click to open another page <=",
+                BorderWidth = 1
+                
             };
             button.Clicked += (sender, args) =>
             {
@@ -37,7 +39,6 @@ namespace XFApp
                      }
                 }
             };
-
         }
 
         protected override void OnStart()

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using SQLite.Net;
+using SQLite.Net.Interop;
 using Xamarin.Forms;
 
 namespace XFApp
@@ -13,6 +14,11 @@ namespace XFApp
         public FirstPage()
         {
             InitializeComponent();
+        }
+
+        public void OpenDatabase()
+        {
+            //var db = new SQLiteConnection();
         }
     }
 }
