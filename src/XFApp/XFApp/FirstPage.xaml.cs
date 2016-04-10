@@ -18,7 +18,7 @@ namespace XFApp
 
         public void OpenDatabase()
         {
-            //var db = new SQLiteConnection();
+            
         }
     }
 }
