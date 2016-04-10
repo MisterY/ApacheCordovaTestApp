@@ -19,4 +19,8 @@ To run, use Visual Studio 2015 or manually configure all the required tools.
 
 ## Xamarin
 
-Xamarin.Android app.
+Xamarin test area. Includes a Xamarin.Android app, Xamarin.Forms suite of apps covering all the supported platforms.
+
+Hints:
+
+To set the custom aapt version, see [this](https://forums.xamarin.com/discussion/28181/android-build-tools-21-0-1-aapt-exe-exited-with-code-1073741819-on-windows).
