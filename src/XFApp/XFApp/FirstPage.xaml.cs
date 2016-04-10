@@ -50,13 +50,22 @@ namespace XFApp
         {
             DisplayAlert("Message", "this will encrypt the database", "close");
 
-            sqlite3 db;
-            raw.sqlite3_open(UnencryptedPath, out db);
-            raw.sqlite3_exec(db, "ATTACH DATABASE '" + EncryptedPath + "' AS encrypted KEY 'testkey';");
-            raw.sqlite3_exec(db, "SELECT sqlcipher_export('encrypted');");
-            raw.sqlite3_exec(db, "DETACH DATABASE encrypted;");
-            
-            db.Dispose();
+            /**
+             * Encryption using .raw works.
+             */
+            //sqlite3 db;
+            //raw.sqlite3_open(UnencryptedPath, out db);
+            //raw.sqlite3_exec(db, "ATTACH DATABASE '" + EncryptedPath + "' AS encrypted KEY 'testkey';");
+            //raw.sqlite3_exec(db, "SELECT sqlcipher_export('encrypted');");
+            //raw.sqlite3_exec(db, "DETACH DATABASE encrypted;");
+
+            // This does not work.
+            //var db = new SQLiteConnection(UnencryptedPath);
+            //db.Execute("ATTACH DATABASE '" + EncryptedPath + "' AS encrypted KEY 'testkey';");
+            //db.Execute("SELECT sqlcipher_export('encrypted');");
+            //db.Execute("DETACH DATABASE encrypted;");
+
+            //db.Dispose();
         }
 
         void OnReadUnencryptedClicked(object sender, EventArgs eventArgs)
