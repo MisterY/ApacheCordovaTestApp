@@ -19,8 +19,6 @@ namespace XFApp
         public FirstPage()
         {
             InitializeComponent();
-
-            InitializeCipher();
         }
 
         void OnCreateClicked(object sender, EventArgs eventArgs)
@@ -65,10 +63,6 @@ namespace XFApp
         {
             try
             {
-                //DisplayAlert("Message", "this should open a database", "close");
-
-                InitializeCipher();
-
                 var db = new SQLiteConnection(UnencryptedPath);
                 var query = db.Table<Test>();
                 foreach (var test in query)
@@ -90,10 +84,6 @@ namespace XFApp
         {
             try
             {
-                //DisplayAlert("Message", "this should open a database", "close");
-
-                InitializeCipher();
-
                 var db = new SQLiteConnection(EncryptedPath);
                 db.Execute("PRAGMA key = 'testkey';");
                 var query = db.Table<Test>();
@@ -110,14 +100,6 @@ namespace XFApp
                 DisplayAlert("Error", ex.Message, "close");
                 //Debug.WriteLine(ex.Message);
             }
-        }
-
-        private void InitializeCipher()
-        {
-            SQLite3Plugin.Init();
-            var sqlcipher = new SQLite3Provider_sqlcipher();
-            SQLitePCL.raw.SetProvider(sqlcipher);
-
         }
     }
 }
