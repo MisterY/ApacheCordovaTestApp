@@ -13,6 +13,7 @@ using XFApp.DomainModel;
 namespace XFApp
 {
     /// <summary>
+    /// The samples using SQLite.Net.
     /// Reference: https://components.xamarin.com/gettingstarted/sqlite-net/true
     /// </summary>
     internal class DataAccessSample
@@ -53,12 +54,6 @@ namespace XFApp
             // Update data.
 
             db.Update(adHocResult);
-        }
-
-        public void SampleUsingPcl()
-        {
-            //var sqlite3 = new sqlite3();
-            //System.Data.SQLite
         }
     }
 }

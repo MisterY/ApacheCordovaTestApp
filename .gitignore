@@ -11,6 +11,8 @@ bin/
 src/Ionic appOcalypse/www/lib/
 node_modules/
 
+src/packages/
+
 # xamarin
 src/ksamarin/obj/
 src/ksamarin/packages/

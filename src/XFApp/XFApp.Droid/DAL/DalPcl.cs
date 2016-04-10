@@ -12,11 +12,11 @@ using Android.Widget;
 
 namespace XFApp.Droid.DAL
 {
-    class SqliteAccess
+    class DalPcl
     {
-        public void connect()
+        public void DatabaseTest()
         {
-            //System.Data.SQLite - not found even though the lib is added to the project. Binaries missing for the platform.
+            var db = new SQLitePCL.SQLite3Provider_sqlcipher();
         }
     }
 }

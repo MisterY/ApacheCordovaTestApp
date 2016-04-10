@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ksamarin", "ksamarin.csproj", "{EDC424BC-2DBD-464D-AD89-BCF44572A7D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ksamarin", "ksamarin\ksamarin.csproj", "{EDC424BC-2DBD-464D-AD89-BCF44572A7D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wuni", "..\wuni\wuni.csproj", "{C9A900BF-2793-4839-93B8-9D49CA745376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wuni", "wuni\wuni.csproj", "{C9A900BF-2793-4839-93B8-9D49CA745376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp", "..\XFApp\XFApp\XFApp.csproj", "{0293E9EE-1FFC-4E97-91FD-54388B969E1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp", "XFApp\XFApp\XFApp.csproj", "{0293E9EE-1FFC-4E97-91FD-54388B969E1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.Droid", "..\XFApp\XFApp.Droid\XFApp.Droid.csproj", "{182C0643-48F5-47BA-9C66-4BF0FD833B1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.Droid", "XFApp\XFApp.Droid\XFApp.Droid.csproj", "{182C0643-48F5-47BA-9C66-4BF0FD833B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.iOS", "..\XFApp\XFApp.iOS\XFApp.iOS.csproj", "{F74C7240-2B31-4EF5-A859-74A564B6F12A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.iOS", "XFApp\XFApp.iOS\XFApp.iOS.csproj", "{F74C7240-2B31-4EF5-A859-74A564B6F12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.UWP", "..\XFApp\XFApp.UWP\XFApp.UWP.csproj", "{EFB743B7-C89C-425E-A839-A22D2372B1B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.UWP", "XFApp\XFApp.UWP\XFApp.UWP.csproj", "{EFB743B7-C89C-425E-A839-A22D2372B1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.Windows", "..\XFApp\XFApp.Windows\XFApp.Windows.csproj", "{C9D6A982-46F3-4FFF-A739-58EA8A7DBE0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.Windows", "XFApp\XFApp.Windows\XFApp.Windows.csproj", "{C9D6A982-46F3-4FFF-A739-58EA8A7DBE0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.WinPhone", "..\XFApp\XFApp.WinPhone\XFApp.WinPhone.csproj", "{387766BA-1F2C-4359-974D-5C980BBC467B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFApp.WinPhone", "XFApp\XFApp.WinPhone\XFApp.WinPhone.csproj", "{387766BA-1F2C-4359-974D-5C980BBC467B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
