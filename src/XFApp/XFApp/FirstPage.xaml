@@ -8,6 +8,7 @@
     <Label Text="This is the very first page created with Xaml." HorizontalOptions="CenterAndExpand"></Label>
     <Button Text="Create Database" Clicked="OnCreateClicked"></Button>
     <Button Text="Encrypt database" Clicked="OnEncryptClicked"></Button>
+    <Button Text="Read unencrypted database" Clicked="OnReadUnencryptedClicked"></Button>
     <Button Text="Read encrypted database" Clicked="OnEncryptReadClicked"></Button>
   </StackLayout>
 </ContentPage>

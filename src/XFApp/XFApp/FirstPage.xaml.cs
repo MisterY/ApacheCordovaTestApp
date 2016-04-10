@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLitePCL;
 using Xamarin.Forms;
 using XFApp.DomainModel;
 
@@ -12,39 +13,35 @@ namespace XFApp
 {
     public partial class FirstPage : ContentPage
     {
-        private const string EncryptedPath = "/mnt/sdcard/Download/UnEncrypted.db";
-        private const string UnencryptedPath = "";
+        private const string EncryptedPath = "/mnt/sdcard/Download/Encrypted.db";
+        private const string UnencryptedPath = "/mnt/sdcard/Download/UnEncrypted.db";
 
         public FirstPage()
         {
             InitializeComponent();
 
-            
-        }
-
-        public void OpenDatabase()
-        {
-            
+            InitializeCipher();
         }
 
         void OnCreateClicked(object sender, EventArgs eventArgs)
         {
-            DisplayAlert("Message", "this should create a database", "close");
+            DisplayAlert("Message", "this will create a database", "close");
 
             var db = new SQLiteConnection(UnencryptedPath);
 
-            db.CreateTable<AccountTransaction>();
+            db.CreateTable<Test>();
 
-            db.Insert(new AccountTransaction()
+            db.Insert(new Test()
             {
-                TransactionDate = DateTime.Now,
-                Notes = "first record"
+                TestText = "blah blah"
+                //TransactionDate = DateTime.Now,
+                //Notes = "first record"
             });
 
-            var query = db.Table<AccountTransaction>();
+            var query = db.Table<Test>();
             foreach (var record in query)
             {
-                Debug.WriteLine("Test: {0}, {1}", record.Id, record.Notes);
+                Debug.WriteLine("Test: {0}, {1}", record.Id, record.TestText);
             }
 
             db.Close();
@@ -53,25 +50,74 @@ namespace XFApp
 
         void OnEncryptClicked(object sender, EventArgs eventArgs)
         {
-            DisplayAlert("Message", "this should encrypt a database", "close");
+            DisplayAlert("Message", "this will encrypt the database", "close");
 
+            sqlite3 db;
+            raw.sqlite3_open(UnencryptedPath, out db);
+            raw.sqlite3_exec(db, "ATTACH DATABASE '" + EncryptedPath + "' AS encrypted KEY 'testkey';");
+            raw.sqlite3_exec(db, "SELECT sqlcipher_export('encrypted');");
+            raw.sqlite3_exec(db, "DETACH DATABASE encrypted;");
+            
+            db.Dispose();
+        }
 
+        void OnReadUnencryptedClicked(object sender, EventArgs eventArgs)
+        {
+            try
+            {
+                //DisplayAlert("Message", "this should open a database", "close");
+
+                InitializeCipher();
+
+                var db = new SQLiteConnection(UnencryptedPath);
+                var query = db.Table<Test>();
+                foreach (var test in query)
+                {
+                    Debug.WriteLine("Test: {0}, {1}", test.Id, test.TestText);
+                }
+
+                db.Close();
+                db.Dispose();
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.Message, "close");
+                //Debug.WriteLine(ex.Message);
+            }
         }
 
         void OnEncryptReadClicked(object sender, EventArgs eventArgs)
         {
-            DisplayAlert("Message", "this should open an encrypted database", "close");
-
-            var db = new SQLiteConnection(EncryptedPath);
-            db.Execute("PRAGMA key = 'testkey';");
-            var query = db.Table<AccountTransaction>();
-            foreach (var test in query)
+            try
             {
-                Debug.WriteLine("Test: {0}, {1}, {2}", test.Id, test.TransactionDate, test.Notes);
-            }
+                //DisplayAlert("Message", "this should open a database", "close");
 
-            db.Close();
-            db.Dispose();
+                InitializeCipher();
+
+                var db = new SQLiteConnection(EncryptedPath);
+                db.Execute("PRAGMA key = 'testkey';");
+                var query = db.Table<Test>();
+                foreach (var test in query)
+                {
+                    Debug.WriteLine("Test: {0}, {1}", test.Id, test.TestText);
+                }
+
+                db.Close();
+                db.Dispose();
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.Message, "close");
+                //Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void InitializeCipher()
+        {
+            SQLite3Plugin.Init();
+            var sqlcipher = new SQLite3Provider_sqlcipher();
+            SQLitePCL.raw.SetProvider(sqlcipher);
+
         }
     }
 }
