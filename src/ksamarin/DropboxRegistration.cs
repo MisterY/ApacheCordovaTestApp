@@ -16,7 +16,7 @@ namespace ksamarin
     /// Used only to generate an entry in AndroidManifest.xml
     /// </summary>
     [Activity(Name = "com.dropbox.client2.android.AuthActivity")]
-#if DEBUG
+#if BETA
     [IntentFilter(new[] { Intent.ActionView }, DataScheme = "db-myBetaApp")]
 #else
     [IntentFilter(new[] { Intent.ActionView }, DataScheme = "db-myReleaseApp")]
