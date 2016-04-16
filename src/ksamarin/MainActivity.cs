@@ -38,7 +38,7 @@ namespace ksamarin
         public void OpenAnotherApp(View view)
         {
             var intent = new Intent();
-            intent.SetComponent(new ComponentName("com.money.manager.ex", "WatchlistActivity"));
+            intent.SetComponent(new ComponentName("com.money.manager.ex", "com.money.manager.ex.transactions.CheckingTransactionEditActivity"));
             StartActivity(intent);
         }
     }
