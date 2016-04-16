@@ -10,7 +10,14 @@ using SQLitePCL;
 
 namespace XFApp.Droid
 {
-    [Activity(Label = "XFApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    /// <summary>
+    /// The name attribute has been added to explicitely set the exposed Activity name. This way it can be started from
+    /// another app.
+    /// ,Name = "XFApp.Droid.MainActivity"
+    /// </summary>
+    [Activity(Label = "XFApp.Droid", Icon = "@drawable/icon", MainLauncher = true, 
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, 
+        Exported = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)

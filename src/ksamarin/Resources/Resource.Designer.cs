@@ -69,6 +69,9 @@ namespace ksamarin
 			// aapt resource value: 0x7f050001
 			public const int myActivityButton = 2131034113;
 			
+			// aapt resource value: 0x7f050003
+			public const int xamarinAppButton = 2131034115;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

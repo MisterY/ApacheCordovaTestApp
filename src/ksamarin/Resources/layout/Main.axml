@@ -3,28 +3,34 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Hello" />
-    <Button
-        android:id="@+id/myActivityButton"
-        android:text="Open My Activity"
+  <Button
+      android:id="@+id/MyButton"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/Hello" />
+  <Button
+      android:id="@+id/myActivityButton"
+      android:text="Open My Activity"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="OpenMyActivity" />
+  <TableLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:stretchColumns="1">
+    <TableRow>
+      <Button
+        android:id="@+id/anotherAppButton"
+        android:text="Another App"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="OpenMyActivity" />
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1">
-        <TableRow>
-            <Button
-              android:id="@+id/anotherAppButton"
-              android:text="Another App"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:onClick="OpenAnotherApp" />
-        </TableRow>
-    </TableLayout>
+        android:onClick="OpenAnotherApp" />
+      <Button
+        android:id="@+id/xamarinAppButton"
+        android:text="Xamarin App"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OpenXamarinApp" />
+    </TableRow>
+  </TableLayout>
 </LinearLayout>

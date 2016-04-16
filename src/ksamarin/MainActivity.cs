@@ -41,6 +41,14 @@ namespace ksamarin
             intent.SetComponent(new ComponentName("com.money.manager.ex", "com.money.manager.ex.transactions.CheckingTransactionEditActivity"));
             StartActivity(intent);
         }
+
+        [Java.Interop.Export("OpenXamarinApp")]
+        public void OpenXamarinApp(View view)
+        {
+            var intent = new Intent();
+            intent.SetComponent(new ComponentName("XFApp.Droid", "md5ee10a5498ad5f080a299e8327d4c0e33.MainActivity"));
+            StartActivity(intent);
+        }
     }
 }
 
