@@ -27,12 +27,19 @@ namespace ksamarin
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
         }
 
-        [Java.Interop.Export("openMyActivity")]
-        public void openMyActivity(View view)
+        [Java.Interop.Export("OpenMyActivity")]
+        public void OpenMyActivity(View view)
         {
             //var activity = new MyActivity();
             StartActivity(typeof(MyActivity));
             //intent.
+        }
+        [Java.Interop.Export("OpenAnotherApp")]
+        public void OpenAnotherApp(View view)
+        {
+            var intent = new Intent();
+            intent.SetComponent(new ComponentName("com.money.manager.ex", "WatchlistActivity"));
+            StartActivity(intent);
         }
     }
 }

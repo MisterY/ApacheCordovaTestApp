@@ -13,5 +13,18 @@
         android:text="Open My Activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="openMyActivity" />
+        android:onClick="OpenMyActivity" />
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <Button
+              android:id="@+id/anotherAppButton"
+              android:text="Another App"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:onClick="OpenAnotherApp" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
